@@ -1,0 +1,181 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omer Mert KAYA Portfolio Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+
+    <!-- Update these with your own fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    
+
+</head>
+<body>
+<header>
+    <div class="logo">
+        <img src="{% static 'img/devjane.png' %}" alt="">
+    </div>
+    <button class="nav-toggle" aria-label="toggle navigation">
+        <span class="hamburger"></span>
+    </button>
+    <nav class="nav">
+        <ul class="nav__list">
+            <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
+            <li class="nav__item"><a href="#services" class="nav__link">My Services</a></li>
+            <li class="nav__item"><a href="#about" class="nav__link">About me</a></li>
+            <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
+            <li class="nav__item"><a href="#story" class="nav__link">My Story</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Introduction -->
+<section class="intro" id="home">
+    <h1 class="section__title section__title--intro">
+        Hi, I am <strong>
+
+        
+
+        <h1>  {{context2.cv_isim_soyisim}}  </h1>
+
+
+
+    
+        
+        </strong>
+    </h1>
+    <p class="section__subtitle section__subtitle--intro">{{context2.cv_Meslek}}</p>
+    <img src="media/images/{{context2.cv_fotograf_1}}" alt="a picture of Omer Mert KAYA smiling" class="intro__img">
+</section>
+
+
+<!-- My services -->
+<section class="my-services" id="services">
+    <h2 class="section__title section__title--services">What I do</h2>
+    <div class="services">
+        <div class="service">
+            <h3>{{context2.baslik_1}}</h3>
+            <p>{{context2.aciklama_2}}</p>
+        </div> <!-- / service -->
+
+        <div class="service">
+            <h3>{{context2.baslik_2}}</h3>
+            <p>{{context2.aciklama_2}}</p>
+        </div> <!-- / service -->
+
+        <div class="service">
+            <h3>{{context2.baslik_3}}</h3>
+            <p>{{context2.aciklama_3}}</p>
+        </div> <!-- / service -->
+    </div> <!-- / services -->
+
+    <a href="#work" class="btn">My Work</a>
+</section>
+
+
+<!-- About me -->
+<section class="about-me" id="about">
+    <h2 class="section__title section__title--about">Who I am</h2>
+    <p class="section__subtitle section__subtitle--about">{{context2.who_baslik}}</p>
+
+    <div class="about-me__body">
+        <p>{{context2.who_aciklama}}</p>
+        <p></p>
+    </div>
+
+    <img src="media/images/{{context2.who_fotograf}}" alt="Jane leaning against a bus" class="about-me__img">
+</section>
+
+<!-- My Work -->
+<section class="my-work" id="work">
+    <h2 class="section__title section__title--work">Work</h2>
+    <p class="section__subtitle section__subtitle--work">A selection of my range of work</p>
+
+        <div class="portfolio"> 
+            
+            
+                    
+
+    <div class="portfolio"> 
+            
+            {% for post in post_liste %}
+            <a href="{% url 'article-detail' post.pk %}" class="portfolio__item" >      
+            <img src="/media/images/{{post.work_fotograf}}" alt="{{post.work_isim}}" class="portfolio__img">
+                </a>     
+            {% endfor %} 
+          
+
+    </div>
+        
+            
+
+        </div>
+
+    </div>
+
+
+    
+
+
+</section>
+
+<!-- My Story  -->
+
+<section class="story" id="story">
+
+
+    <h2 class="section__title section__title--story">This is My Story</h2>
+    <p class="section__subtitle section__subtitle--story">{{context2.story_baslik}}</p>
+
+    <div class="story__body">
+        <p>{{context2.story_aciklama}}</p>
+
+    </div>
+
+   <img src="media/images/{{context2.story_fotograf}}" alt="" class="story__img">
+
+
+</section>
+
+
+<!-- Footer -->
+<footer class="footer">
+
+    <a href="mailto:omermertkaya@hotmail.com.tr" class="footer__link">omermertkaya@hotmail.com.tr</a>
+    <ul class="social-list">
+        <li class="social-list__item">
+            <a class="social-list__link" href="https://www.linkedin.com/in/omermertkaya/">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </li>
+        <li class="social-list__item">
+            <a class="social-list__link" href="http://github.com/omermertkaya">
+                <i class="fab fa-github"></i>
+            </a>
+        </li>
+        <li class="social-list__item">
+            <a class="social-list__link" href="https://twitter.com">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </li>
+        <li class="social-list__item">
+            <a class="social-list__link" href="https://github.com/omermertkaya">
+                <i class="fab fa-github"></i>
+            </a>
+        </li>
+    </ul>
+</footer>
+
+        <script src={% static 'js/index.js' %}></script>
+    
+
+</body>
+
+
+</html>
