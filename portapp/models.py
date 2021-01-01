@@ -10,7 +10,7 @@ class PostHome2(models.Model):
 
     cv_isim_soyisim = models.CharField(max_length=225)
     cv_Meslek = models.CharField(max_length=225, default ="blog")
-    cv_fotograf_1 = models.ImageField(null=True, blank=True)
+    cv_fotograf_1 = models.ImageField(null=True, blank=True, upload_to ='media')
     author = models.ForeignKey(User ,on_delete=models.CASCADE)
     
 
