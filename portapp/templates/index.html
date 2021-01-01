@@ -51,7 +51,7 @@
         </strong>
     </h1>
     <p class="section__subtitle section__subtitle--intro">{{context2.cv_Meslek}}</p>
-    <img src="media/photo/{{context2.cv_fotograf_1}}" alt="a picture of Omer Mert KAYA smiling" class="intro__img">
+    <img src="media/{{context2.cv_fotograf_1}}" alt="a picture of Omer Mert KAYA smiling" class="intro__img">
 </section>
 
 
@@ -89,7 +89,7 @@
         <p></p>
     </div>
 
-    <img src="media/photo/{{context2.who_fotograf}}" alt="Jane leaning against a bus" class="about-me__img">
+    <img src="media/{{context2.who_fotograf}}" alt="Jane leaning against a bus" class="about-me__img">
 </section>
 
 <!-- My Work -->
@@ -106,7 +106,7 @@
             
             {% for post in post_liste %}
             <a href="{% url 'article-detail' post.pk %}" class="portfolio__item" >      
-            <img src="media/photo/{{post.work_fotograf}}" alt="{{post.work_isim}}" class="portfolio__img">
+            <img src="media/{{post.work_fotograf}}" alt="{{post.work_isim}}" class="portfolio__img">
                 </a>     
             {% endfor %} 
           
@@ -138,7 +138,7 @@
 
     </div>
 
-   <img src="media/photo/{{context2.story_fotograf}}" alt="" class="story__img">
+   <img src="media/{{context2.story_fotograf}}" alt="" class="story__img">
 
 
 </section>
