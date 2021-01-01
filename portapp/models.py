@@ -34,7 +34,7 @@ class PostHome3(models.Model):
 class PostHome4(models.Model):
     who_baslik = models.CharField(max_length=255)
     who_aciklama = models.TextField()
-    who_fotograf = models.ImageField(null=True, blank=True)
+    who_fotograf = models.ImageField(null=True, blank=True, upload_to ='media')
 
 
 
@@ -43,7 +43,7 @@ class PostHome4(models.Model):
 class Story_Bolumu(models.Model):
     story_baslik = models.CharField(max_length=255)
     story_aciklama = models.TextField()
-    story_fotograf = models.ImageField(null=True, blank=True)
+    story_fotograf = models.ImageField(null=True, blank=True, upload_to ='media')
     def __str__(self):
         return self.story_baslik + '   | Story Bolumu'
 
@@ -52,8 +52,8 @@ class Story_Bolumu(models.Model):
 class Work_Bolumu(models.Model):
     work_isim = models.CharField(max_length=255)
     work_alt_baslik = models.CharField(max_length=255, blank=True)
-    work_fotograf = models.ImageField(null=True, blank=True)
-    work_fotograf_3 = models.ImageField(null=True, blank=True)
+    work_fotograf = models.ImageField(null=True, blank=True, upload_to ='media')
+    work_fotograf_3 = models.ImageField(null=True, blank=True, upload_to ='media')
     work_aciklama = models.TextField()
     
     def __str__(self):
