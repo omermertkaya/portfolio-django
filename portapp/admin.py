@@ -1,9 +1,11 @@
 from django.contrib import admin
-from .models import PostHome2,PostHome3,PostHome4,Story_Bolumu, Work_Bolumu
+from .models import HomeSection,MyServicesSection,AboutMeSection,StorySection, WorkSection, WebLogoName, FooterSection
 
 # Register your models here.
-admin.site.register(PostHome2)
-admin.site.register(PostHome3)
-admin.site.register(PostHome4)
-admin.site.register(Story_Bolumu)
-admin.site.register(Work_Bolumu)
+admin.site.register(WebLogoName)
+admin.site.register(HomeSection)
+admin.site.register(MyServicesSection)
+admin.site.register(AboutMeSection)
+admin.site.register(StorySection)
+admin.site.register(WorkSection)
+admin.site.register(FooterSection)

@@ -5,21 +5,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Omer Mert KAYA Portfolio Website</title>
+    <title>{{context2.web_name}}</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
 
     <!-- Update these with your own fonts -->
     <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     
 
 </head>
 <body>
 <header>
     <div class="logo">
-        <img src="{% static '/img/omermertkaya.png' %}" alt="">
+        <a href="/">
+        <img src="media/images/{{context2.web_logo}}" alt="">
+        </a>
     </div>
     <button class="nav-toggle" aria-label="toggle navigation">
         <span class="hamburger"></span>
@@ -42,7 +44,7 @@
 
         
 
-        <h1>  {{context2.cv_isim_soyisim}}  </h1>
+        <h1>  {{context2.cv_name_surname}}  </h1>
 
 
 
@@ -50,8 +52,8 @@
         
         </strong>
     </h1>
-    <p class="section__subtitle section__subtitle--intro">{{context2.cv_Meslek}}</p>
-    <img src="media/{{context2.cv_fotograf_1}}" alt="a picture of Omer Mert KAYA smiling" class="intro__img">
+    <p class="section__subtitle section__subtitle--intro">{{context2.cv_job}}</p>
+    <img src="media/images/{{context2.cv_photo}}" alt="a picture of Omer Mert KAYA smiling" class="intro__img">
 </section>
 
 
@@ -60,18 +62,18 @@
     <h2 class="section__title section__title--services">What I do</h2>
     <div class="services">
         <div class="service">
-            <h3>{{context2.baslik_1}}</h3>
-            <p>{{context2.aciklama_1}}</p>
+            <h3>{{context2.title_1}}</h3>
+            <p>{{context2.content_1|safe}}</p>
         </div> <!-- / service -->
 
         <div class="service">
-            <h3>{{context2.baslik_2}}</h3>
-            <p>{{context2.aciklama_2}}</p>
+            <h3>{{context2.title_2}}</h3>
+            <p>{{context2.content_2|safe}}</p>
         </div> <!-- / service -->
 
         <div class="service">
-            <h3>{{context2.baslik_3}}</h3>
-            <p>{{context2.aciklama_3}}</p>
+            <h3>{{context2.title_3}}</h3>
+            <p>{{context2.content_3|safe}}</p>
         </div> <!-- / service -->
     </div> <!-- / services -->
 
@@ -79,17 +81,18 @@
 </section>
 
 
+
 <!-- About me -->
 <section class="about-me" id="about">
     <h2 class="section__title section__title--about">Who I am</h2>
-    <p class="section__subtitle section__subtitle--about">{{context2.who_baslik}}</p>
+    <p class="section__subtitle section__subtitle--about">{{context2.who_title}}</p>
 
     <div class="about-me__body">
-        <p>{{context2.who_aciklama}}</p>
+        <p>{{context2.who_content|safe}}</p>
         <p></p>
     </div>
 
-    <img src="media/{{context2.who_fotograf}}" alt="Jane leaning against a bus" class="about-me__img">
+    <img src="media/images/{{context2.who_photo}}" alt="Jane leaning against a bus" class="about-me__img">
 </section>
 
 <!-- My Work -->
@@ -106,7 +109,7 @@
             
             {% for post in post_liste %}
             <a href="{% url 'article-detail' post.pk %}" class="portfolio__item" >      
-            <img src="media/{{post.work_fotograf}}" alt="{{post.work_isim}}" class="portfolio__img">
+            <img src="/media/images/{{post.work_index_photo}}" alt="{{post.work_title}}" class="portfolio__img">
                 </a>     
             {% endfor %} 
           
@@ -131,14 +134,14 @@
 
 
     <h2 class="section__title section__title--story">This is My Story</h2>
-    <p class="section__subtitle section__subtitle--story">{{context2.story_baslik}}</p>
+    <p class="section__subtitle section__subtitle--story">{{context2.story_title}}</p>
 
     <div class="story__body">
-        <p>{{context2.story_aciklama}}</p>
+        <p>{{context2.story_content|safe}}</p>
 
     </div>
 
-   <img src="media/{{context2.story_fotograf}}" alt="" class="story__img">
+   <img src="media/images/{{context2.story_photo}}" alt="" class="story__img">
 
 
 </section>
@@ -147,26 +150,26 @@
 <!-- Footer -->
 <footer class="footer">
 
-    <a href="mailto:omermertkaya@hotmail.com.tr" class="footer__link">omermertkaya@hotmail.com.tr</a>
+    <a href="mailto:{{context2.footer_email}}" class="footer__link">{{context2.footer_email}}</a>
     <ul class="social-list">
         <li class="social-list__item">
-            <a class="social-list__link" href="https://www.linkedin.com/in/omermertkaya/">
+            <a class="social-list__link" href="{{context2.footer_linked}}">
                 <i class="fab fa-linkedin"></i>
             </a>
         </li>
         <li class="social-list__item">
-            <a class="social-list__link" href="http://github.com/omermertkaya">
+            <a class="social-list__link" href="{{context2.footer_github}}">
                 <i class="fab fa-github"></i>
             </a>
         </li>
         <li class="social-list__item">
-            <a class="social-list__link" href="https://twitter.com">
-                <i class="fab fa-twitter"></i>
+            <a class="social-list__link" href="{{context2.footer_instagram}}">
+                <i class="fab fa-instagram"></i>
             </a>
         </li>
         <li class="social-list__item">
-            <a class="social-list__link" href="https://github.com/omermertkaya">
-                <i class="fab fa-github"></i>
+            <a class="social-list__link" href="{{context2.footer_facebook}}">
+                <i class="fab fa-facebook"></i>
             </a>
         </li>
     </ul>

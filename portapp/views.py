@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView,CreateView
-from .models import PostHome2,PostHome3,PostHome4,Story_Bolumu, Work_Bolumu
+from .models import HomeSection,MyServicesSection,AboutMeSection,StorySection, WorkSection, WebLogoName, FooterSection
 from django.template import Context, loader
 from django.utils import timezone
  
@@ -9,48 +9,66 @@ from django.utils import timezone
 
 def HomeView(request):
 
-    obj = PostHome2.objects.get(id=1)
+    obj = HomeSection.objects.get(id=1)
     context5= {
-    'cv_isim_soyisim' : obj.cv_isim_soyisim,
-    'cv_Meslek' : obj.cv_Meslek,
-    'cv_fotograf_1': obj.cv_fotograf_1
+    'cv_name_surname' : obj.cv_name_surname,
+    'cv_job' : obj.cv_job,
+    'cv_photo': obj.cv_photo
     }
 
-    obj2 = PostHome3.objects.get(id=1)
+    obj2 = MyServicesSection.objects.get(id=1)
     context2= {
-        'baslik_1' : obj2.baslik_1,
-        'aciklama_1' : obj2.aciklama_1,
-        'baslik_2' : obj2.baslik_2,
-        'aciklama_2' : obj2.aciklama_2,
-        'baslik_3' : obj2.baslik_3,
-        'aciklama_3' : obj2.aciklama_3,
+        'title_1' : obj2.title_1,
+        'content_1' : obj2.content_1,
+        'title_2' : obj2.title_2,
+        'content_2' : obj2.content_2,
+        'title_3' : obj2.title_3,
+        'content_3' : obj2.content_3,
 
     }
 
-    obj3 = PostHome4.objects.get(id=1)
+    obj3 = AboutMeSection.objects.get(id=1)
     context3={
-        'who_baslik' : obj3.who_baslik,
-        'who_aciklama' : obj3.who_aciklama,
-        'who_fotograf' : obj3.who_fotograf,
+        'who_title' : obj3.who_title,
+        'who_content' : obj3.who_content,
+        'who_photo' : obj3.who_photo,
     }
 
-    obj4 = Story_Bolumu.objects.get(id=1)
+    obj4 = StorySection.objects.get(id=1)
     context4={
-        'story_baslik' : obj4.story_baslik,
-        'story_aciklama' : obj4.story_aciklama,
-        'story_fotograf' : obj4.story_fotograf,
+        'story_title' : obj4.story_title,
+        'story_content' : obj4.story_content,
+        'story_photo' : obj4.story_photo,
 
+    }
+
+    obj5 = WebLogoName.objects.get(id=1)
+    context6={
+        'web_name' : obj5.web_name,
+        'web_logo' : obj5.web_logo,
+    }
+
+    obj6 = FooterSection.objects.get(id=1)
+    context7 ={
+        'footer_linked' : obj6.footer_linked,
+        'footer_github' : obj6.footer_github,
+        'footer_instagram' : obj6.footer_instagram,
+        'footer_facebook' : obj6.footer_facebook,
+        'footer_email' : obj6.footer_email,
     }
         
-    context2.update(context5)
+    
     context2.update(context3)
     context2.update(context4)
+    context2.update(context5)
+    context2.update(context6)
+    context2.update(context7)
 
     # post_list = Work_Bolumu.objects.all() 
    
     #return render(request, 'work.html', context)
 
-    post_liste = Work_Bolumu.objects.all() 
+    post_liste = WorkSection.objects.all() 
 
    
 
@@ -61,8 +79,43 @@ def HomeView(request):
 
 
 class ArticleDetailBolumu(DetailView):
-    model = Work_Bolumu
+    model = WorkSection
     template_name='article_details.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["WebLogoName"] = WebLogoName.objects.get(id=1)
+        return context
+
+    def get_context_data(self, **kwargs):
+        context3 = super().get_context_data(**kwargs)
+        context3["FooterSection"] = FooterSection.objects.get(id=1)
+        return context3
+    
+    
+    
+
+
+# def ArticleDetailBolumu(requset):
+
+#     post_liste2 = Work_Bolumu.objects.all() 
+
+#     obj = WebLogoName.objects.get(id=1)
+#     context6={
+#         'web_name' : obj.web_name,
+#         'web_logo' : obj.web_logo,
+#     }
+        
+
+#     return render(request, "article_details.html",{"context2":context2,"post_liste":post_liste})
+
+
+    
+
+
+
+
+
         
       
     

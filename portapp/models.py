@@ -2,62 +2,77 @@ from django.db import models
 from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
+from ckeditor.fields import RichTextField
+
+
 
 # Create your models here.
 
 
-class PostHome2(models.Model):
+class WebLogoName(models.Model):
+    web_name = models.CharField(max_length=225,help_text="This is your site title")
+    web_logo = models.ImageField(null= True, blank=True)
 
-    cv_isim_soyisim = models.CharField(max_length=225)
-    cv_Meslek = models.CharField(max_length=225, default ="blog")
-    cv_fotograf_1 = models.ImageField(null=True, blank=True, upload_to ='photo')
+
+class HomeSection(models.Model):
+
+    cv_name_surname = models.CharField(max_length=225)
+    cv_job = models.CharField(max_length=225, default ="blog")
+    cv_photo= models.ImageField(null=True, blank=True)
     author = models.ForeignKey(User ,on_delete=models.CASCADE)
     
 
 
     def __str__(self):
-        return self.cv_isim_soyisim+ ' | ' + str(self.author)
+        return self.cv_name_surname + ' | ' + str(self.author)
 
     
-class PostHome3(models.Model):
-    baslik_1 = models.CharField(max_length=255)
-    aciklama_1 = models.TextField()
-    baslik_2 = models.CharField(max_length=255)
-    aciklama_2 = models.TextField()
-    baslik_3 = models.CharField(max_length=255)
-    aciklama_3 = models.TextField()
+class MyServicesSection(models.Model):
+    title_1 = models.CharField(max_length=255)
+    content_1 = RichTextField(blank=True, null=True)
+    title_2 = models.CharField(max_length=255)
+    content_2 = RichTextField(blank=True, null=True)
+    title_3 = models.CharField(max_length=255)
+    content_3 = RichTextField(blank=True, null=True)
     author = models.ForeignKey(User ,on_delete=models.CASCADE)
     def __str(self):
         return self.author
 
 
-class PostHome4(models.Model):
-    who_baslik = models.CharField(max_length=255)
-    who_aciklama = models.TextField()
-    who_fotograf = models.ImageField(null=True, blank=True, upload_to ='photo')
+class AboutMeSection(models.Model):
+    who_title = models.CharField(max_length=255,help_text="Who I am; under the title")
+    who_content = RichTextField(blank=True, null=True)
+    who_photo = models.ImageField(null=True, blank=True)
 
 
 
 
 
-class Story_Bolumu(models.Model):
-    story_baslik = models.CharField(max_length=255)
-    story_aciklama = models.TextField()
-    story_fotograf = models.ImageField(null=True, blank=True, upload_to ='photo')
+class StorySection(models.Model):
+    story_title = models.CharField(max_length=255, help_text="This is My Story; under the title")
+    story_content = RichTextField(blank=True, null=True)
+    story_photo = models.ImageField(null=True, blank=True)
     def __str__(self):
-        return self.story_baslik + '   | Story Bolumu'
+        return self.story_title + '   | Story Bolumu'
 
 
 
-class Work_Bolumu(models.Model):
-    work_isim = models.CharField(max_length=255)
-    work_alt_baslik = models.CharField(max_length=255, blank=True)
-    work_fotograf = models.ImageField(null=True, blank=True, upload_to ='photo')
-    work_fotograf_3 = models.ImageField(null=True, blank=True, upload_to ='photo')
-    work_aciklama = models.TextField()
+class WorkSection(models.Model):
+    work_name = models.CharField(max_length=255)
+    work_sub_title_black =  models.CharField(max_length=255, blank=True)
+    work_sub_title = models.CharField(max_length=255, blank=True)
+    work_article_photo = models.ImageField(null=True, blank=True)
+    work_index_photo = models.ImageField(null=True, blank=True)
+    work_content = RichTextField(blank=True, null=True)
     
     def __str__(self):
-        return self.work_isim + '|' + str(self.work_fotograf)
+        return self.work_name + '|' + str(self.work_index_photo)
     def get_absolute_url(self):
         return reverse("article-detail", args=(str(self.id)))
     
+class FooterSection(models.Model):
+    footer_linked = models.CharField(max_length=300, blank=True)
+    footer_github = models.CharField(max_length=300, blank=True)
+    footer_instagram = models.CharField(max_length=300, blank=True)
+    footer_facebook = models.CharField(max_length=300, blank=True)
+    footer_email = models.CharField(max_length=300, blank=True)
