@@ -430,6 +430,17 @@ header {
 /* Story */
 
 
+
+.about-me__body{
+    text-align:justify;
+}
+
+
+.story__body{
+    text-align:justify;
+}
+
+
 .story {
     max-width: 1000px;
     margin: 0 auto;
@@ -597,7 +608,7 @@ header {
 }
 
 #home {
-    padding-bottom:25px;
+    padding-bottom:50px;
 }
 
 #detail-image{
