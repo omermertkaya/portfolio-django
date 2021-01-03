@@ -83,15 +83,12 @@ class ArticleDetailBolumu(DetailView):
     template_name='article_details.html'
 
     def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["WebLogoName"] = WebLogoName.objects.get(id=1)
-        return context
-
-    def get_context_data(self, **kwargs):
-        context3 = super().get_context_data(**kwargs)
-        context3["FooterSection"] = FooterSection.objects.get(id=1)
-        return context3
-    
+        context1 = super().get_context_data(**kwargs)
+        context1["WebLogoName"] = WebLogoName.objects.get(id=1)
+        context2 = super().get_context_data(**kwargs)
+        context2["FooterSection"] = FooterSection.objects.get(id=1)
+        context2.update(context1)
+        return context2
     
     
 
