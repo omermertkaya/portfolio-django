@@ -17,7 +17,7 @@
 
 # Installation for Windows;
 
-[Click](https://www.youtube.com/watch?v=Z8cfV5w9IWE&ab_channel=MeKodum) to watch the installation video.
+[Click](https://www.youtube.com/watch?v=dQ5H94UEpak&feature=youtu.be&ab_channel=MeKodum) to watch the installation video.
 
 
 1) Open "cmd" in project file,
