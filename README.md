@@ -14,10 +14,6 @@
 - Username : testuser
 - Password : DjangoAdmin123
 
-# How can I edit it?
-
-![Screenshot](screenshot1.png)
-
 
 # Installation for Windows;
 
@@ -41,5 +37,11 @@ cd ../
 ```
 python manage.py runserver
 ```
+
+
+
+# How can I edit it?
+
+![Screenshot](screenshot1.png)
 
 
