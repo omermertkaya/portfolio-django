@@ -17,6 +17,8 @@
 
 # Installation for Windows;
 
+[Click](https://www.youtube.com/watch?v=Z8cfV5w9IWE&ab_channel=MeKodum) to watch the installation video.
+
 
 1) Open "cmd" in project file,
 
@@ -34,12 +36,16 @@ cd ../
 ```
 
 3) Run server
+
 ```
 python manage.py runserver
 ```
 
+4) Create Admin
 
-[![Screenshot](screenshot2.png)](https://www.youtube.com/watch?v=Z8cfV5w9IWE&ab_channel=MeKodum)
+```
+python manage.py createsuperuser
+```
 
 
 
@@ -56,6 +62,8 @@ python manage.py runserver
 You can [review](https://www.youtube.com/watch?v=_xkSvufmjEs&ab_channel=freeCodeCamp.org) the page for front-end.
 
 You can look [documentation](https://docs.djangoproject.com/en/3.1/) django for back-end.
+
+
 
 
 
