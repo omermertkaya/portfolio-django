@@ -39,7 +39,7 @@ python manage.py runserver
 ```
 
 
-[![Everything Is AWESOME](http://i.imgur.com/Ot5DWAW.png)](https://youtu.be/StTqXEQ2l-Y?t=35s "Everything Is AWESOME")
+[![Screenshot](screenshot2.png)](https://www.youtube.com/watch?v=Z8cfV5w9IWE&ab_channel=MeKodum)
 
 
 
