@@ -1,8 +1,8 @@
 # PORTFOLIO WITH DJANGO
 
-- Design coding was done with html vs css.
+- Front-end coding was done with html vs css.
 - Javascript is used in the upper left menu.
-- In the backend section, development was made with django.
+- In the Back-End section, development was made with django.
 
 # Do you want to preview my portfolio?
 
