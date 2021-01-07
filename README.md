@@ -14,11 +14,6 @@
 - Username : testuser
 - Password : DjangoAdmin123
 
-# Installation for Windows from Youtube, Click
-
-
-[![Screenshot](screenshot2.png)](https://www.youtube.com/watch?v=Z8cfV5w9IWE&ab_channel=MeKodum)
-
 
 # Installation for Windows;
 
@@ -42,6 +37,9 @@ cd ../
 ```
 python manage.py runserver
 ```
+
+[Click](https://www.youtube.com/watch?v=Z8cfV5w9IWE&ab_channel=MeKodum) to watch the installation video.
+
 
 
 # Preview
