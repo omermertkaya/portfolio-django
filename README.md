@@ -48,7 +48,9 @@ python manage.py runserver
 # Source
 
 
-You can [review](https://www.youtube.com/watch?v=_xkSvufmjEs&ab_channel=freeCodeCamp.org) the page for front-end. 
+You can [review](https://www.youtube.com/watch?v=_xkSvufmjEs&ab_channel=freeCodeCamp.org) the page for front-end.
+
+You can look [documentation](https://docs.djangoproject.com/en/3.1/) django for back-end.
 
 
 
