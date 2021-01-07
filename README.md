@@ -1,8 +1,8 @@
 # PORTFOLIO WITH DJANGO
 
-- Design coding was done with html vs css.
+- Front-end coding was done with html vs css.
 - Javascript is used in the upper left menu.
-- In the backend section, development was made with django.
+- In the Back-End section, development was made with django.
 
 # Do you want to preview my portfolio?
 
@@ -14,6 +14,48 @@
 - Username : testuser
 - Password : DjangoAdmin123
 
-# How can I edit it?
+
+# Installation for Windows;
+
+
+1) Open "cmd" in project file,
+
+```
+cd virt
+cd scripts
+activate
+```
+
+2) Return to project file
+
+```
+cd ../
+cd ../
+```
+
+3) Run server
+```
+python manage.py runserver
+```
+
+
+[![Screenshot](screenshot2.png)](https://www.youtube.com/watch?v=Z8cfV5w9IWE&ab_channel=MeKodum)
+
+
+
+# Preview
 
 ![Screenshot](screenshot1.png)
+
+
+
+
+# Source
+
+
+You can [review](https://www.youtube.com/watch?v=_xkSvufmjEs&ab_channel=freeCodeCamp.org) the page for front-end.
+
+You can look [documentation](https://docs.djangoproject.com/en/3.1/) django for back-end.
+
+
+
