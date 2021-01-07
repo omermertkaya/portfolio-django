@@ -40,7 +40,7 @@ python manage.py runserver
 
 
 
-# How can I edit it?
+# Preview
 
 ![Screenshot](screenshot1.png)
 
