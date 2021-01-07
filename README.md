@@ -36,8 +36,15 @@ cd ../
 ```
 
 3) Run server
+
 ```
 python manage.py runserver
+```
+
+4) Create Admin
+
+```
+python manage.py createsuperuser
 ```
 
 
