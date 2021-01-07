@@ -17,3 +17,29 @@
 # How can I edit it?
 
 ![Screenshot](screenshot1.png)
+
+
+# Installation for Windows;
+
+
+1) Open "cmd" in project file,
+
+```
+cd virt
+cd scripts
+activate
+```
+
+2) Return to project file
+
+```
+cd ../
+cd ../
+```
+
+3) Run server
+```
+python manage.py runserver
+```
+
+
