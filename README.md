@@ -37,9 +37,9 @@ cd ../
 ```
 python manage.py runserver
 ```
-
+```
 [Click](https://www.youtube.com/watch?v=Z8cfV5w9IWE&ab_channel=MeKodum) to watch the installation video.
-
+```
 
 
 # Preview
