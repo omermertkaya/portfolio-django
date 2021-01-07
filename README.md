@@ -48,8 +48,7 @@ python manage.py runserver
 # Source
 
 
-
-This site was built using [template](https://www.youtube.com/watch?v=_xkSvufmjEs&ab_channel=freeCodeCamp.org).
+You can [review](https://www.youtube.com/watch?v=_xkSvufmjEs&ab_channel=freeCodeCamp.org) the page for front-end. 
 
 
 
