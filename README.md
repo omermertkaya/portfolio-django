@@ -8,12 +8,6 @@
 
 - https://omermertkaya.herokuapp.com/
 
-# Do you want to browse the admin panel?
-
-- https://omermertkaya.herokuapp.com/admin/login/?next=/admin/
-- Username : testuser
-- Password : DjangoAdmin123
-
 
 # Installation for Windows;
 
