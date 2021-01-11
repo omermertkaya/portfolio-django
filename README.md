@@ -67,6 +67,7 @@ You can look [documentation](https://docs.djangoproject.com/en/3.1/) django for 
 # Releases
 
 [V.0.0.1](https://github.com/omermertkaya/portfolio-django/releases/tag/V0.01)
+
 [V.0.0.2](https://github.com/omermertkaya/portfolio-django/releases/tag/0.0.2)
 
 
