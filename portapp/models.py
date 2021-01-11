@@ -3,6 +3,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
 from ckeditor.fields import RichTextField
+from django.urls import reverse
 
 
 
@@ -20,11 +21,12 @@ class HomeSection(models.Model):
     cv_job = models.CharField(max_length=225, default ="blog")
     cv_photo= models.ImageField(null=True, blank=True)
     author = models.ForeignKey(User ,on_delete=models.CASCADE)
-    
-
-
+    def get_absolute_url(self):
+        #return reverse("article-detail", args=(str(self.id)))
+        return reverse('home')
     def __str__(self):
         return self.cv_name_surname + ' | ' + str(self.author)
+        
 
     
 class MyServicesSection(models.Model):

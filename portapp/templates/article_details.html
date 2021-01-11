@@ -27,14 +27,22 @@
     </button>
     <nav class="nav">
         <ul class="nav__list">
-            <li class="nav__item"><a href="../" class="nav__link">Home</a></li>
-            <li class="nav__item"><a href="../#services" class="nav__link">My Services</a></li>
-            <li class="nav__item"><a href="../#about" class="nav__link">About me</a></li>
-            <li class="nav__item"><a href="../#work" class="nav__link">My Work</a></li>
-            <li class="nav__item"><a href="../#story" class="nav__link">My Story</a></li>
+            <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
+            <li class="nav__item"><a href="#services" class="nav__link">My Services</a></li>
+            <li class="nav__item"><a href="#about" class="nav__link">About me</a></li>
+            <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
+            <li class="nav__item"><a href="#story" class="nav__link">My Story</a></li>
+            {% if user.is_authenticated %}
+            <li class="nav__item"><a href="{%  url 'logout'  %}" class="nav__link">Logout</a></li>    
+            {% else %}
+            <li class="nav__item"><a href="{%  url 'login'  %}" class="nav__link">Login</a></li>              
+            {% endif %}
+            
+          </li>
         </ul>
     </nav>
 </header>
+
 
 
 <section class="intro" id="home">
@@ -52,10 +60,22 @@
     
     <img src="/media/images/{{object.work_article_photo}}" alt="" id="detail-image" class="portfolio-item-individual">
     
-        
+
+{% if user.is_authenticated %}
+    <div style="margin-right: 45%; margin-left: 45%;">
+    <a href="{% url 'update-worksection' object.pk %}" class="btn-red">EDIT</a>
+    </div>
+    
+{% endif %}
+    
+
     
 
 </div>
+
+
+
+
 
 
 <!-- Footer -->

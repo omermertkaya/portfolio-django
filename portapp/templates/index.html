@@ -18,9 +18,15 @@
 </head>
 <body>
 <header>
-    <div class="logo">
+    <div class="logo" style="z-index: -1;position: absolute;">
         <a href="/">
         <img src="media/images/{{context2.web_logo}}" alt="">
+        
+        {% if user.is_authenticated %}
+        <a href="{% url 'update-weblogoname' 1 %}" class="btn-red">EDIT</a>
+        {% endif %}
+            
+        
         </a>
     </div>
     <button class="nav-toggle" aria-label="toggle navigation">
@@ -33,20 +39,30 @@
             <li class="nav__item"><a href="#about" class="nav__link">About me</a></li>
             <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
             <li class="nav__item"><a href="#story" class="nav__link">My Story</a></li>
+            {% if user.is_authenticated %}
+            <li class="nav__item"><a href="{%  url 'logout'  %}" class="nav__link">Logout</a></li>    
+            {% else %}
+            <li class="nav__item"><a href="{%  url 'login'  %}" class="nav__link">Login</a></li>              
+            {% endif %}
+            
+          </li>
         </ul>
     </nav>
 </header>
 
+  
+
 <!-- Introduction -->
 <section class="intro" id="home">
+    
     <h1 class="section__title section__title--intro">
-        Hi, I am <strong>
+        Hi, I am <strong> 
 
         
 
         <h1>  {{context2.cv_name_surname}}  </h1>
-
-
+        
+        
 
     
         
@@ -54,11 +70,32 @@
     </h1>
     <p class="section__subtitle section__subtitle--intro">{{context2.cv_job}}</p>
     <img src="media/images/{{context2.cv_photo}}" alt="a picture of Omer Mert KAYA smiling" class="intro__img">
+    <br>
+    <br>
+    <br>
+    <div class="about-me-button" style="position: absolute;;top:10%; left:0; bottom: 0;right: 50%;">
+        
+        {% if user.is_authenticated %}
+        <a href="{% url 'update-homesection' 1 %}" class="btn-red">EDIT</a>
+        {% endif %}
+            
+        
+        
+    </div>
 </section>
 
 
 <!-- My services -->
-<section class="my-services" id="services">
+<section class="my-services" id="services" style="position: relative;">
+    <div class="about-me-button" style="position: absolute;;top:0; left:0; bottom: 0;right: 50%;">
+        
+        {% if user.is_authenticated %}
+        <a href="{% url 'update-myservicessection' 1 %}" class="btn-red">EDIT</a>
+        {% endif %}
+            
+        
+    </div>
+    
     <h2 class="section__title section__title--services">What I do</h2>
     <div class="services">
         <div class="service">
@@ -83,7 +120,7 @@
 
 
 <!-- About me -->
-<section class="about-me" id="about">
+<section class="about-me" id="about" style="position: relative;">
     <h2 class="section__title section__title--about">Who I am</h2>
     <p class="section__subtitle section__subtitle--about">{{context2.who_title}}</p>
 
@@ -92,8 +129,20 @@
         <p></p>
     </div>
 
-    <img src="media/images/{{context2.who_photo}}" alt="Jane leaning against a bus" class="about-me__img">
+    <img src="media/images/{{context2.who_photo}}" alt="{{context2.who_title}}" class="about-me__img">
+    
+    <div class="about-me-button" style="position: absolute;;top:0; left:0; bottom: 0;right: 50%;">
+        
+        {% if user.is_authenticated %}
+        <a href="{% url 'update-aboutmesection' 1 %}" class="btn-red">EDIT</a>
+        {% endif %}
+            
+        
+    </div>
+
 </section>
+
+
 
 <!-- My Work -->
 <section class="my-work" id="work">
@@ -130,7 +179,15 @@
 
 <!-- My Story  -->
 
-<section class="story" id="story">
+<section class="story" id="story" style="position:relative;">
+    <div class="about-me-button" style="position: absolute;;top:0; left:0; bottom: 0;right: 50%;">
+        
+        {% if user.is_authenticated  %}
+        <a href="{% url 'update-storysection' 1 %}" class="btn-red">EDIT</a>
+        {% endif %}
+            
+        
+    </div>
 
 
     <h2 class="section__title section__title--story">This is My Story</h2>
@@ -143,13 +200,19 @@
 
    <img src="media/images/{{context2.story_photo}}" alt="" class="story__img">
 
-
+  
 </section>
 
 
 <!-- Footer -->
 <footer class="footer">
-
+    
+    {% if user.is_authenticated %}
+    <a href="{% url 'update-footersection' 1 %}" class="btn-red">EDIT</a>
+    {% endif %}
+        
+    
+    <br>
     <a href="mailto:{{context2.footer_email}}" class="footer__link">{{context2.footer_email}}</a>
     <ul class="social-list">
         <li class="social-list__item">
@@ -174,6 +237,10 @@
         </li>
     </ul>
 </footer>
+
+<br>
+
+
 
         <script src={% static 'js/index.js' %}></script>
     

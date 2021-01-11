@@ -151,6 +151,7 @@ header {
 }
 
 .nav {
+    display: inline;
     position: fixed;
     background: var(--clr-dark);
     color: var(--clr-light);
