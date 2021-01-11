@@ -84,8 +84,25 @@ strong { font-weight: var(--fw-bold) }
     transition: transform 200ms ease-in-out;
 }
 
+.btn-red {
+    display: inline-block;
+    padding: .5em 2.5em;
+    background:red;
+    color: var(--clr-dark);
+    text-decoration: none;
+    cursor: pointer;
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: var(--fw-bold);
+    transition: transform 200ms ease-in-out;
+}
+
 .btn:hover {
     transform: scale(1.1);
+}
+.btn-red:hover{
+    transform:scale(1.1);
 }
 
 /* Typography */
@@ -151,7 +168,7 @@ header {
 }
 
 .nav {
-    display: inline;
+    text-align: center;
     position: fixed;
     background: var(--clr-dark);
     color: var(--clr-light);
@@ -431,6 +448,17 @@ header {
 /* Story */
 
 
+
+.about-me__body{
+    text-align:justify;
+}
+
+
+.story__body{
+    text-align:justify;
+}
+
+
 .story {
     max-width: 1000px;
     margin: 0 auto;
@@ -598,9 +626,21 @@ header {
 }
 
 #home {
-    padding-bottom:25px;
+    padding-bottom:50px;
 }
 
 #detail-image{
     max-width: 800px;
+}
+
+.about-me-edit-photo-p{
+    max-width: 400px;
+    max-height: 400px;
+    margin-right: auto;
+    margin-left: auto
+}
+
+.update__footersection{
+    max-width: 800px;
+    margin: auto;
 }
