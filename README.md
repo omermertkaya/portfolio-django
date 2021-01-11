@@ -64,6 +64,9 @@ You can [review](https://www.youtube.com/watch?v=_xkSvufmjEs&ab_channel=freeCode
 You can look [documentation](https://docs.djangoproject.com/en/3.1/) django for back-end.
 
 
+# Releases
+
+[V0.01](https://github.com/omermertkaya/portfolio-django/releases/tag/V0.01)
 
 
 
