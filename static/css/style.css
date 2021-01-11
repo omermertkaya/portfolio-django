@@ -84,7 +84,7 @@ strong { font-weight: var(--fw-bold) }
     transition: transform 200ms ease-in-out;
 }
 
-.btn-red {
+.button__edit {
     display: inline-block;
     padding: .5em 2.5em;
     background:red;
@@ -101,7 +101,7 @@ strong { font-weight: var(--fw-bold) }
 .btn:hover {
     transform: scale(1.1);
 }
-.btn-red:hover{
+.button__edit:hover{
     transform:scale(1.1);
 }
 
