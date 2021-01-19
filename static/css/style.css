@@ -105,6 +105,27 @@ strong { font-weight: var(--fw-bold) }
     transform:scale(1.1);
 }
 
+
+.btn-red{
+    display: inline-block;
+    padding: .5em 2.5em;
+    background:red;
+    color: var(--clr-dark);
+    text-decoration: none;
+    cursor: pointer;
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: var(--fw-bold);
+    transition: transform 200ms ease-in-out;
+
+}
+
+.btn-red:hover{
+    transform:scale(1.1);
+}
+
+
 /* Typography */
 
 h1,
@@ -625,9 +646,7 @@ header {
     margin-right: auto;
 }
 
-#home {
-    padding-bottom:50px;
-}
+
 
 #detail-image{
     max-width: 800px;
@@ -643,4 +662,30 @@ header {
 .update__footersection{
     max-width: 800px;
     margin: auto;
+}
+
+
+#work__post{
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding-top: 15%;
+    
+}
+
+#work__post:hover{
+    color:red;
+    transform: scale(1.1);
+    
+}
+
+#article_details_hr{
+
+    width: 800px;
+}
+
+#article_details_button{
+    
+    width: 800px;
+    margin:auto;
 }

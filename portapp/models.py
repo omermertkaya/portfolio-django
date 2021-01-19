@@ -64,7 +64,7 @@ class WorkSection(models.Model):
     work_sub_title_black =  models.CharField(max_length=255, blank=True)
     work_sub_title = models.CharField(max_length=255, blank=True)
     work_article_photo = models.ImageField(null=True, blank=True)
-    work_index_photo = models.ImageField(null=True, blank=True)
+    work_index_photo = models.ImageField(null=True, blank=True, help_text="Upload 400x400 images to get a good look.")
     work_content = RichTextField(blank=True, null=True)
     
     def __str__(self):

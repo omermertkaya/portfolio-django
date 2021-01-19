@@ -1,9 +1,10 @@
 from django.shortcuts import render, get_object_or_404
-from django.views.generic import ListView, DetailView,CreateView, UpdateView
+from django.views.generic import ListView, DetailView,CreateView, UpdateView, DeleteView
 from .models import HomeSection,MyServicesSection,AboutMeSection,StorySection, WorkSection, WebLogoName, FooterSection
 from django.template import Context, loader
 from django.utils import timezone
 from django.views.generic.edit import UpdateView 
+from django.urls import reverse_lazy
 
  
 
@@ -201,6 +202,39 @@ class WebLogoNameUpdateView(UpdateView):
         context1["WebLogoName"] = WebLogoName.objects.get(id=1)
         context.update(context1)
         return context
+
+
+class WorkSectionCreateView(CreateView):
+    model = WorkSection
+    template_name = "add_worksection.html"
+    fields=['work_name','work_sub_title_black','work_sub_title','work_article_photo','work_index_photo','work_content']
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["FooterSection"] = FooterSection.objects.get(id=1)
+        context1 = super().get_context_data(**kwargs)
+        context1["WebLogoName"] = WebLogoName.objects.get(id=1)
+        context2 = super().get_context_data(**kwargs)
+        context2["WorkSection"] = WorkSection.objects.all()
+        context.update(context2)
+        context.update(context1)
+        return context
+
+class WorkSectionDeleteView(DeleteView):
+    model = WorkSection
+    template_name = "del_worksection.html"
+    success_url = reverse_lazy('index')
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["FooterSection"] = FooterSection.objects.get(id=1)
+        context1 = super().get_context_data(**kwargs)
+        context1["WebLogoName"] = WebLogoName.objects.get(id=1)
+        context2 = super().get_context_data(**kwargs)
+        context2["WorkSection"] = WorkSection.objects.all()
+        context.update(context2)
+        context.update(context1)
+        return context
+
+
 
 
 

@@ -131,6 +131,7 @@
 
     <img src="media/images/{{context2.who_photo}}" alt="{{context2.who_title}}" class="about-me__img">
     
+    
     <div class="about-me-button" style="position: absolute;;top:0; left:0; bottom: 0;right: 50%;">
         
         {% if user.is_authenticated %}
@@ -149,11 +150,6 @@
     <h2 class="section__title section__title--work">Work</h2>
     <p class="section__subtitle section__subtitle--work">A selection of my range of work</p>
 
-        <div class="portfolio"> 
-            
-            
-                    
-
     <div class="portfolio"> 
             
             {% for post in post_liste %}
@@ -161,21 +157,31 @@
             <img src="/media/images/{{post.work_index_photo}}" alt="{{post.work_title}}" class="portfolio__img">
                 </a>     
             {% endfor %} 
+            
+            {% if user.is_authenticated %}
+            <a href="{% url 'add-workseciton' %}" class="portfolio__item">
+                <img src="{% static 'img/add-work-post.png' %}" alt="{{post.work_title}}" class="portfolio__img">
+                
+            </a>
+            {% endif %}
+        
+            </div>
           
 
     </div>
+
+    
         
             
 
-        </div>
-
-    </div>
-
-
-    
-
 
 </section>
+
+<!-- My Work  Ending -->
+
+
+
+
 
 <!-- My Story  -->
 

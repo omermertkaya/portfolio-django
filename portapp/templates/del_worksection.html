@@ -1,36 +1,37 @@
 {% load static %}
 
+{% if user.is_authenticated %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{WebLogoName.web_name}} - {{ object.work_name }} </title>
+    <title>Editing - {{object.work_name}} -  Work Section </title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
-
-    
-
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+   
 
     <!-- Update these with your own fonts -->
     <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+   
+    
 
 </head>
 <body>
 <header>
     <div class="logo">
-        <a href="../">
-        <img src="../media/images/{{WebLogoName.web_logo}}" alt="">
+        <a href="/">
+        <img src="../../media/images/{{WebLogoName.web_logo}}" alt="">
         </a>
     </div>
     <button class="nav-toggle" aria-label="toggle navigation">
         <span class="hamburger"></span>
     </button>
     <nav class="nav">
-        <ul class="nav__list">
+        <ul class="nav__list" style="margin: auto;">
             <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
             <li class="nav__item"><a href="#services" class="nav__link">My Services</a></li>
             <li class="nav__item"><a href="#about" class="nav__link">About me</a></li>
@@ -46,49 +47,25 @@
         </ul>
     </nav>
 </header>
+    <section class="worksection-edit" style="width: 800px; text-align: center marg;" >
+
+        
+
+            <h1>Delete Blog Post</h1>
+            <h3>Delete: {{post.title}}</h3>
+
+            
+                    <form method="Post">
+                        {% csrf_token %}
+                        <strong>Are you sure!</strong><br>
+                        <button class="btn btn-secondary">Delete Post!</button> 
 
 
+                    </form>
+                </div>
+              
 
-<section class="intro" id="home">
-    <h1 class="section__title section__title--intro">
-       {{ object.work_name }} <strong>{{object.work_sub_title_black}}</strong>
-    </h1>
-    <p class="section__subtitle section__subtitle--intro">{{object.work_sub_title}}</p>
-    <img src="/media/images/{{object.work_index_photo}}" alt="" class="intro__img">
-    {% comment %} <img src="/media/images/{{result.work_fotograf}}" alt="{{result.work_isim}}" class="portfolio__img"> {% endcomment %}
-</section>
-
-{% if user.is_authenticated %}
-
-<hr id="article_details_hr">
-
-<div id="article_details_button">
-<a href="{% url 'add-workseciton'%}" class="button__edit">CREATE NEW POST </a>
-<a href="{% url 'update-worksection' object.pk %}" class="button__edit">EDIT </a>
-
-<a href="{% url 'del-worksection' object.pk %}" class="button__edit">DELETE THIS POST</a>
-</div>
-
-    
-<hr id="article_details_hr">
-
-{% endif %}
-
-
-<div class="portfolio-item-individual">
-    <p>{{ object.work_content|safe }} </p>
-    
-    <img src="/media/images/{{object.work_article_photo}}" alt="" id="detail-image" class="portfolio-item-individual">
-    
-
-</div>
-{% if user.is_authenticated %}
-
-
-
-
-</div>
-{% endif %}
+    </section>
 
 
 
@@ -120,8 +97,18 @@
     </ul>
 </footer>
 
-
-<script src="{% static 'js/index.js' %}"></script>
+        <script src={% static 'js/index.js' %}></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
 
 </body>
+
+
 </html>
+
+
+{% else %}
+
+{% include "404.html" %}
+
+{% endif %}
