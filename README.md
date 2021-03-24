@@ -13,32 +13,38 @@
 
 [Click](https://www.youtube.com/watch?v=dQ5H94UEpak&feature=youtu.be&ab_channel=MeKodum) to watch the installation video.
 
+...
+$ git clone https://github.com/omermertkaya/portfolio-django.git
+...
+
 
 1) Open "cmd" in project file,
 
 ```
-cd virt
-cd scripts
-activate
+$ pip install -r requirements.txt
+$ python -m venv virt
+$ cd virt
+$ cd scripts
+$ activate
 ```
 
 2) Return to project file
 
 ```
-cd ../
-cd ../
+$ cd ../
+$ cd ../
 ```
 
 3) Run server
 
 ```
-python manage.py runserver
+$ python manage.py runserver
 ```
 
 4) Create Admin
 
 ```
-python manage.py createsuperuser
+$ python manage.py createsuperuser
 ```
 
 
